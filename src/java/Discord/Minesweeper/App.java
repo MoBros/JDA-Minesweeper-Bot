@@ -7,7 +7,6 @@ import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Hashtable;
 import java.awt.Image;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
@@ -15,12 +14,9 @@ import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
-
 public class App extends ListenerAdapter {
-	public static Hashtable<String, String> help = new Hashtable<String, String>();
-	
     public static void main(String[] args) throws Exception {
-        JDA jda = new JDABuilder(AccountType.CLIENT).setToken(Ref.botToken).buildBlocking();
+        JDA jda = new JDABuilder(AccountType.BOT).setToken(Ref.botToken).buildBlocking();
         jda.addEventListener(new Commands());
         jda.getPresence().setGame(Game.playing("Minesweeper."));
         
