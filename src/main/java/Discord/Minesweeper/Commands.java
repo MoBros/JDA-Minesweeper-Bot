@@ -1,15 +1,9 @@
 package Discord.Minesweeper;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.List;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
-import net.dv8tion.jda.core.entities.PrivateChannel;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
@@ -46,7 +40,6 @@ public class Commands extends ListenerAdapter {
     	User user = e.getAuthor();
     	MessageChannel channel = e.getChannel();
     	Message msg = e.getMessage();
-    	Guild server = e.getGuild();
 		JDA jda = msg.getJDA();
 		String[] cmd = msg.getContentRaw().split(" ");
     	
