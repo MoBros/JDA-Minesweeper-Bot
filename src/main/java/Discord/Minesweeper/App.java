@@ -1,4 +1,4 @@
-package Discord.Minesweeper;
+package discord.minesweeper;
 
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
@@ -21,7 +21,7 @@ public class App extends ListenerAdapter {
         jda.getPresence().setGame(Game.playing("Minesweeper."));
         
         // System tray icon
-        Image image = Toolkit.getDefaultToolkit().getImage(".\\src\\main\\java\\Resources\\Incardnate_Icon.png");
+        Image image = Toolkit.getDefaultToolkit().getImage(".\\src\\main\\java\\resources\\Incardnate_Icon.png");
         SystemTray tray = SystemTray.getSystemTray();
         PopupMenu popup = new PopupMenu();
         MenuItem exitItem = new MenuItem("Exit");

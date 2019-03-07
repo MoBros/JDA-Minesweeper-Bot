@@ -1,7 +1,5 @@
-package Discord.Minesweeper;
+package discord.minesweeper;
 
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.User;
@@ -40,7 +38,6 @@ public class Commands extends ListenerAdapter {
     	User user = e.getAuthor();
     	MessageChannel channel = e.getChannel();
     	Message msg = e.getMessage();
-		JDA jda = msg.getJDA();
 		String[] cmd = msg.getContentRaw().split(" ");
     	
     	// Commands

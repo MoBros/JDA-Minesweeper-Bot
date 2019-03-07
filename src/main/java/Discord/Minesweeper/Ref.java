@@ -1,4 +1,4 @@
-package Discord.Minesweeper;
+package discord.minesweeper;
 
 public class Ref {
 	// Tokens
