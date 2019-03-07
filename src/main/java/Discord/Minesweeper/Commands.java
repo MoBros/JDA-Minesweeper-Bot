@@ -28,8 +28,7 @@ public class Commands extends ListenerAdapter {
 		if (y < 0) return false;
 		if (y >= grid[0].length) return false;
 		
-		if (grid[x][y] == ":bomb:") return true;
-		return false;
+		return grid[x][y].equals(":bomb:");
 	}
 	
 	@Override
@@ -116,6 +115,9 @@ public class Commands extends ListenerAdapter {
 							break;
     				case 8: grid[x][y] = ":eight:";
 							break;
+					default: 
+							channel.sendMessage("**Error:** Grid generated incorrectly.").queue();
+							return;
 	    			}
 	    		}
 	    	}
