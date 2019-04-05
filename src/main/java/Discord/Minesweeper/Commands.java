@@ -29,8 +29,7 @@ public class Commands extends ListenerAdapter {
 		if (y >= grid[0].length) return false;
 		
 		if (grid[x][y] == null) return false;
-		if (grid[x][y].equals(":bomb:")) return true;
-		return false;
+		return grid[x][y].equals(":bomb:");
 	}
 	
 	@Override
