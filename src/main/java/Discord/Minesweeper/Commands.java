@@ -28,7 +28,9 @@ public class Commands extends ListenerAdapter {
 		if (y < 0) return false;
 		if (y >= grid[0].length) return false;
 		
-		return grid[x][y].equals(":bomb:");
+		if (grid[x][y] == null) return false;
+		if (grid[x][y].equals(":bomb:")) return true;
+		return false;
 	}
 	
 	@Override
@@ -38,7 +40,7 @@ public class Commands extends ListenerAdapter {
     	MessageChannel channel = e.getChannel();
     	Message msg = e.getMessage();
 		String[] cmd = msg.getContentRaw().split(" ");
-    	
+		
     	// Commands
     	if (user.isBot()) return;
     	
@@ -84,8 +86,8 @@ public class Commands extends ListenerAdapter {
 	    	// Sets the location of mines.
 	    	for (int i = 0; i < mines; i++) {
 	    		int loc = (int) (Math.random() * (size));
-	    		int x = loc / grid.length;
-	    		int y = loc % grid[0].length;
+	    		int x = loc % grid.length;
+	    		int y = loc / grid.length;
 	    		
 	    		if (grid[x][y] == null) grid[x][y] = ":bomb:";
 	    		else i--;
@@ -96,6 +98,7 @@ public class Commands extends ListenerAdapter {
 	    		for (int y = 0; y < grid[0].length; y++) {
 	    			if (grid[x][y] != null) continue;
 	    			int adj = countAdjacentMines(grid, x, y);
+	    			
 	    			switch (adj) {
     				case 0: grid[x][y] = ":zero:";
 							break;
